@@ -38,6 +38,7 @@ You can also just doubleclick the main.py file in the folder and it will run.
 
 Just use pip with the requirements.txt for your own python installation or for a venv to get the missing packages,
 and then run the python script.
+(This will install all the missing PyPI packages for your python environment)
 
 ## Usage
 
