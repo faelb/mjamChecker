@@ -7,19 +7,37 @@ mjamChecker is a Python program that helps you to find out when your restaurant 
 ### I'm just a normal user
 
 First make sure to install python version 3.9 on your PC/Linux/MAC.
-While installing python, the program may asks if it should update the system/environment variable. If so, tell it to update it.
-After installing python the next thing you have to do open the command line. For that,in Windows, you press the windows home button
-and type in "shell" or "cmd" or "Eingabeaufforderung" and open it.
-You type in "python --version".
-If it tells you the version of python everything is alright. If there is a error message check google for "How to add python
-to environment variable windows" or "Python in Umgebungsvariable windows".
+To do so just open the command line in windows (you press the windows home button
+and type in "shell" or "cmd" or "Eingabeaufforderung" and open it) and type in python.
+If its not installed yet, the windows store will pop up and give you the opportunity to install it.
+Of course you could also download and install it from the official website.
+If it was already installed, it will look like this:
 
-If that worked now you have to type in "
+C:\Users\username>python
+Python 3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+
+just type quit() and press enter to quit the python shell.
+
+After installing python the next thing you have to do open the command line (if its not already opened).
+Get the folder path of where all the files are in (main.py, README, requirements.txt) and copy it (just get it from the windows explorer).
+It could look like this: C:\GitHub\mjamChecker
+Back in the commandline type: cd pathYouJustCopied
+so in my case it would be: cd C:\GitHub\mjamChecker
+press Enter - the command line now switched the directory path to the path of our program.
+Type in: pip install -r requirements.txt
+wait for all the dependencies to install
+DONE!
+
+now you can just type in main.py and press enter - the program will start.
+You can also just doubleclick the main.py file in the folder and it will run.
+
 
 ### I know what I'm doing
 
-If you want to you can just use the requirements.txt for your own python installation or for a venv,
-and then run the python script there.
+Just use pip with the requirements.txt for your own python installation or for a venv to get the missing packages,
+and then run the python script.
 
 ## Usage
 
