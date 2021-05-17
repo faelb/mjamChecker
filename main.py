@@ -9,7 +9,7 @@ to find out wether a restaurant is down or available.
 If it is currently down, the program will poll the website every 5 seconds
 and play an alarm sound if it is available again.
 """
-import getpass
+import getpass #just to get username from system
 # to check if URL is a valid URL
 import validators
 # to get the html text from requests
@@ -21,6 +21,7 @@ from playsound import playsound
 # file for alarmsound
 from time import sleep
 
+mamacitaURL = "https://www.mjam.net/restaurant/wien/mamacita-california-burritos-1100/?origin=list"
 mp3File = "src/security.mp3"
 global restaurantURL
 
@@ -44,16 +45,20 @@ def getRestaurantLoop():
                 print("------------------------------------")
                 exit(1)
             elif statusParagraph == "Momentan keine Lieferung oder Vorbestellung möglich.":
-                print("momentan down - wir alarmieren dich wenn das Lokal wieder Bestellungen aufnimmt")
+                print("momentan down - wir alarmieren dich wenn das Lokal wieder Bestellungen annimmt")
                 sleep(2)
-                while not getParagraphContent(html) == "Momentan keine Lieferung oder Vorbestellung möglich.":
-                    sleep(7)
-                    print("------------------------------------")
-                    print("Restaurant available - make your order!")
-                    print("------------------------------------")
-                playsound(mp3File)
-                sleep(10)
-                exit(1)
+                while True:
+                    sleep(15)
+                    html = getResponseContent(cleanURL)
+                    statusParagraph = getParagraphContent(html)
+                    if not statusParagraph:
+                        print("------------------------------------")
+                        print("Restaurant available - make your order!")
+                        print("------------------------------------")
+                        playsound(mp3File)
+                    else:
+                        print("still not available - asking again in 15 seconds")
+
         else:
             print("something with your URL was wrong (not mjam, invalid URL...) - please try again\n")
 
