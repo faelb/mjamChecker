@@ -2,7 +2,7 @@
 File name: main.py
 Author: faelb (faelb@gmx.at)
 Date created: 22/12/2020
-Date last modified: 22/12/2020
+Date last modified: 17/05/2021
 Python Version: 3.9
 This program crawls website data from Mjam.net
 to find out wether a restaurant is down or available.
@@ -55,7 +55,8 @@ def getRestaurantLoop():
                         print("------------------------------------")
                         print("Restaurant available - make your order!")
                         print("------------------------------------")
-                        playsound(mp3File)
+                        while True:
+                            playsound(mp3File)
                     else:
                         print("still not available - asking again in 15 seconds")
 
